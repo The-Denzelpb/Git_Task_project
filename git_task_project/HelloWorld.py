@@ -15,19 +15,19 @@ def simple_calculator():
 
     if choice == 1:
         value = num * 2
-        print(f"\nYour number times 2 is: {value}\n")
+        print(f"\nYour number times (2) is: {value}\n")
 
     elif choice == 2:
         value = num * 3
-        print(f"\nYour number times 3 is: {value}\n")
+        print(f"\nYour number times (3) is: {value}\n")
 
     elif choice == 3:
         value = num * 4
-        print(f"\nYour number times 4 is: {value}\n")
+        print(f"\nYour number times (4) is: {value}\n")
 
     elif choice == 4:
         value = num * 5
-        print(f"\nYour number times 5 is: {value}\n")
+        print(f"\nYour number times (5) is: {value}\n")
 
     else:
         print("\nOption is out of range")
