@@ -1,49 +1,48 @@
-def simple_calculator():
-    num = float(input("\nPlease enter a number you wish to multiply (can multiply from 2-5 times): "))
-    choice = input("""Please pick an option: 
-    1 to multiply your number by (2) 
-    2 to multiply your number by (3)
-    3 to multiply your number by (4)
-    4 to multiply your number by (5): """)
+# This is a Github project Task program
 
+# This function does multiplications on two user inputted numbers
+def simple_calculator():
+    
+    # These variables take user input to be used in the calculations
+    num = float(input("\nPlease enter a number you wish to multiply: "))
+    choice = float(input("Please enter the number you wish to multiply your previous number by: "))
+
+    # This try-except block excepts value errors from the user
+    # "return" ensures that the program does not proceed with the calculation after it catches the error 
     try:
         num = float(num)
-        choice = int(choice)
+        choice = float(choice)
 
     except ValueError:
         print("Please enter a valid number")
-
-    if choice == 1:
-        value = num * 2
-        print(f"\nYour number times (2) is: {value}\n")
-
-    elif choice == 2:
-        value = num * 3
-        print(f"\nYour number times (3) is: {value}\n")
-
-    elif choice == 3:
-        value = num * 4
-        print(f"\nYour number times (4) is: {value}\n")
-
-    elif choice == 4:
-        value = num * 5
-        print(f"\nYour number times (5) is: {value}\n")
-
-    else:
-        print("\nOption is out of range")
+        return
+    
+    # This variable stores the answer the user wants
+    value = num * choice
+    
+    # This print statement, prints the answer in a friendly fashion
+    # ":.1f" ensures that the output floats are limited to ONE decimals
+    print(f"The number {num:.1f} multiplied by {choice:.1f} is: {value:.1f}\n")
 
 
-# Get input from the user and store it in a variable.
+# Get input from the user and store it in a variable (user's name)
 name = input("\nPlease enter your name: ")
 
-# Display the information to the user
+# Display the information to the user (Welcome message)
 print(f"\nWELCOME {name}! Isn't Git Awesome!")
 
+# This variable is the main menu option displayed to the user
+# ".lower()" converts user input to lowercase to prevent errors
 option = input(f"""\nWhat do you want to do:
-Enter A for a simple calculator: """).lower()
+Enter A for a multiplication calculator
+Enter B to exit the program: """).lower()
 
+# This control block controls the menu option
 if option == "a":
     simple_calculator()
 
+elif option == "b":
+    exit(f"\nThank You, Goodbye\n")
+
 else:
-    exit("Thank You, Goodbye")
+    print(f"\nInvalid option\n")
